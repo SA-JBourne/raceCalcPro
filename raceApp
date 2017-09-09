@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+int main(){
+
+    double top_Average,all_Rank, total_Fin, QoR, PpP, rank_points;
+
+        cout << "What is the average of the five best ranked riders from the top 10? ";
+        cin >> top_Average;
+        cout << "\n";
+        cout << "What is the Avrg. ranking of all finishers? ";
+        cin >> all_Rank;
+        cout << "\n";
+          if (all_Rank > top_Average)
+          {
+
+                QoR = top_Average * 0.9;
+          }
+          else
+          {
+                 QoR = all_Rank * 0.9;
+          }
+
+        cout << "The Quality of the race calculates to " << QoR;
+        cout << "\n";
+
+
+        cout << "Now enter the total number of finishers:";
+        cin >> total_Fin;
+
+
+
+                 PpP = ((((all_Rank) - (QoR)) * 2) / (total_Fin - 1));
+
+
+        cout << " The Points per Place to be distributed is " << PpP << " points. \n";
+
+
+return 0;
+}
