@@ -2,15 +2,34 @@
 using namespace std;
 int main(){
 
-    double top_Average,all_Rank, total_Fin, QoR, PpP, rank_points;
 
-        cout << "What is the average of the five best ranked riders from the top 10? ";
-        cin >> top_Average;
+    double top_Average,all_Rank, QoR, PpP, rank_Points;
+    double winner_Rank, top_R_2, top_R_3, top_R_4, top_R_5;
+    int total_Fin, finisher_Pos;
+
+        cout << "Please enter in order from position 1 through position 5, \n"          //Start of top 5 average
+             << "the rank of the 5 highest ranked finishers in the top 10:";
         cout << "\n";
+        cin >> winner_Rank >> top_R_2 >> top_R_3 >> top_R_4 >> top_R_5;
+        cout << "\n";
+
+            if ((winner_Rank <= 600) && (top_R_2 <= 600) && (top_R_3 <= 600) && (top_R_4 <= 600) && (top_R_5 <= 600))
+            {
+               top_Average = ((winner_Rank + top_R_2 + top_R_3 + top_R_4 + top_R_5) / 5);
+               cout << "The average rank of the 5 highest ranked finishers in the top 10 is " << top_Average << "\n";
+            }
+            else
+            {
+                cout << "Sorry, all riders must have a ranking between 0 and 600. \n"
+                     << "The program will now terminate. \n";
+                return 0;
+            }
+
         cout << "What is the Avrg. ranking of all finishers? ";
         cin >> all_Rank;
         cout << "\n";
-          if (all_Rank > top_Average)
+
+          if (all_Rank > top_Average)               // Start of Quality of Race (QoR).
           {
 
                 QoR = top_Average * 0.9;
@@ -19,21 +38,44 @@ int main(){
           {
                  QoR = all_Rank * 0.9;
           }
+          if (QoR < winner_Rank)
+          {
+              cout << "Sorry, the Race Quality is better than \n"
+                   << "the ranking points of the best finisher in the top 10.";
+              cout << "\n";
+          }
+          else
+          {
+              cout << "Good! The Race quality is greater than the Rank of the top rider in the top 10. \n";
+          }
+       cout << "The Quality of the race calculates to " << QoR << "\n";
 
-        cout << "The Quality of the race calculates to " << QoR;
-        cout << "\n";
+          if (QoR > 540)
+          {
+              cout << "Sorry, the Quality of the Race is worse than 540. ";
+          }
+            else
+            {
+                cout << "\n";
+            }
 
-
-        cout << "Now enter the total number of finishers:";
+        cout << "Now enter the total number of finishers: \n";                 //Start of Points per Place to be Distr.
         cin >> total_Fin;
 
+                 PpP = (((all_Rank - QoR) * 2) / ( total_Fin - 1 ));
+
+        cout << "\n";
+        cout << "The Points per Place to be distributed is " << PpP << " points. \n";
 
 
-                 PpP = ((((all_Rank) - (QoR)) * 2) / (total_Fin - 1));
+        cout << "Now enter the finishing place of the rider: ";                       //Starts the Rank Points of the race.
+        cin >> finisher_Pos;
+        cout << "\n";
 
+                rank_Points = QoR + ((finisher_Pos -1) * PpP);
 
-        cout << " The Points per Place to be distributed is " << PpP << " points. \n";
-
+        cout << "The Rank Points is " << rank_Points << ". \n";
 
 return 0;
+
 }
