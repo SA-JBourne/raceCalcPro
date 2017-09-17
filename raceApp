@@ -11,6 +11,9 @@ cout.precision (3);
     char end_Char;
 
 
+
+    cout << "\n\n\ \t******SUPER AWESOME BIKE RACING CALCULATING PROGRAM******\n\n\n";
+
         cout << "\tPlease enter in order from position 1 through position 5, \n"          //Start of top 5 average
              << "\tthe rank of the 5 highest ranked finishers in the top 10: \n";
         cout << "\n";
@@ -27,7 +30,7 @@ cout.precision (3);
         cout << "\n";
 
             if ((winner_Rank <= 600) && (top_R_2 <= 600) && (top_R_3 <= 600) && (top_R_4 <= 600) &&
-                (top_R_5 <= 600) && (winner_Rank > 0) && (top_R_2 > 0) && (top_R_3 > 0) && (top_R_4 < 0) &&
+                (top_R_5 <= 600) && (winner_Rank > 0) && (top_R_2 > 0) && (top_R_3 > 0) && (top_R_4 > 0) &&
                 (top_R_5 > 0))               //<-Makes sure no scored entered is over 600 or under 0.
             {
                top_Average = ((winner_Rank + top_R_2 + top_R_3 + top_R_4 + top_R_5) / 5.000);
@@ -35,8 +38,13 @@ cout.precision (3);
             }
             else
             {
-                cout << "**Sorry, all riders must have a ranking between 0 and 600. \n"
-                     << "The program will now terminate.** \n";
+                cout << "\t**Sorry, all riders must have a ranking between 0 and 600. \n"
+                     << "\tThe program will now terminate.** \n";
+                     cout << "**uhh...Sorry, since I haven't learned how to stop the program from closing "
+             << "\t\t  automatically, you have to type a letter or number and hit enter, to end**";
+
+        cin >> end_Char;
+        if (end_Char == true || end_Char == 0)
                 return 0;
             }
         cout << "\t What is the Avrg. ranking of all finishers? ";             // Average must be asked here so it can be used in line 34 if/then statement.
@@ -55,9 +63,19 @@ cout.precision (3);
           }
           if (QoR < winner_Rank)
           {
-              cout << "**Sorry, the Race Quality is better than \n"
-                   << "the ranking points of the best finisher in the top 10**.";
+              cout << "\t**Sorry, the Race Quality is better than \n"
+                   << "\tthe ranking points of the best finisher in the top 10**.";
               cout << "\n\n";
+
+              cout  << "\tThe program will now terminate.** \n\n";
+              cout << "**uhh...Sorry, since I haven't learned how to stop the program from closing "
+             << "\t  automatically, you have to type a letter or number and hit enter, to end**";
+
+        cin >> end_Char;
+        if (end_Char == end_Char)
+               {
+                return 0;
+               }
           }
           else
           {
