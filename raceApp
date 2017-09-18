@@ -12,6 +12,12 @@ cout.precision (3);
 
     cout << "\n\n\ \t******SUPER AWESOME BIKE RACING CALCULATING PROGRAM******\n\n\n";
 
+                            cout << "\t\t\t\t..... ___@\n";
+                            cout << "\t\t\t\t... _`\<,_\n";
+                            cout << "\t\t\t\t.. (*)/ (*)\n";
+                            cout << "\t\t\t\t ~~~~~~~~\n\n";
+
+
         cout << "\tPlease enter in order from position 1 through position 5, \n"          //Start of top 5 average
              << "\tthe rank of the 5 highest ranked finishers in the top 10: \n";
         cout << "\n";
